@@ -132,7 +132,10 @@ export default function Game() {
       </div>
 
       {/* Board */}
-      <div className="grid grid-cols-4 gap-2 p-2 bg-slate-200 rounded-xl w-full max-w-[340px] aspect-square">
+      <div
+        className="grid grid-cols-4 gap-2 p-2 bg-slate-200 rounded-xl w-full max-w-[340px] aspect-square touch-none"
+        onTouchMove={(e) => e.preventDefault()}
+      >
         {board.map((tile, idx) => {
           if (tile === 0) {
             return <div key="empty" className="rounded-lg" />;
